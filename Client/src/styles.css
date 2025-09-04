@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+* {
+    margin: 10px;
+    padding: 0px;
+    background-color: #353535;
+    color: rgb(236, 236, 255);
+    font-family: "Aclonica", sans-serif;
+    text-align: center;
+}
+
+.main {
+    margin-top: 50px;
+}
