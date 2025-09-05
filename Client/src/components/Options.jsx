@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { useContext, useState } from 'react';
+import { Button, TextField, Paper, Grid, Typography, Container, Box } from '@mui/material';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+
+
+import { SocketContext } from './../SocketContext';
 
 const Options = ({ children }) => {
+
+    const { me, callAccepted, name, setName, leavecall, callUser, callEnded } = useContext(SocketContext);
+    const [idToCall, setIdToCall] = useState('');
+
     return (
-        <div>
-            Options
+        <Container sx={{ margin: "35px 0", padding: 0, width: { xs: "80%", sm: "600px" } }}>
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Paper elevation={10} sx={{ padding: "10px 20px", border: "2px solid black", mt: 2 }}>
+                    <form sx={{ display: "flex", flexDirection: "column" }} noValidate autoComplete='off'>
+                        <Grid container sx={{ display: "flex", flexDirection: "column", width: "100%", flexDirection: { xs: "column", sm: "row" } }}>
+                            <Grid item xs={12} md={6} sx={{ padding: '20px', bgcolor: "rgba(196, 196, 196, 1)" }}>
+                                <Typography gutterBottom variant='h6'>Account Info</Typography>
+                                <TextField label='Name' value={name} onChange={(e) => setName(e.target.value)} fullWidth />
+                                <CopyToClipboard text={me} sx={{ mt: 2 }}>
+                                    <Button variant='contained' color='primary' fullWidth startIcon={<AssignmentIcon fontSize="large" />}>
+                                        Copy Your ID
+                                    </Button>
+                                </CopyToClipboard>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </Paper>
+            </Box>
             {children}
-        </div>
+        </Container >
     )
 }
 

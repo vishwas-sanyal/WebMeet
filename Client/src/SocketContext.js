@@ -28,6 +28,9 @@ const ContextProvider = ({ children }) => {
                     myVideo.current.srcObject = currentStream; // ✅ safe
                 }
             })
+            .catch((err) => {
+                console.error("❌ Failed to get media stream:", err);
+            });
         socket.on('me', (id) => setMe(id));
         socket.on('calluser', ({ from, name: callerName, signal }) => {
             setCall({ isReceivedCall: true, from, name: callerName, signal })
