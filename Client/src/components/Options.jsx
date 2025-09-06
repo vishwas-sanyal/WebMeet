@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Button, TextField, Paper, Grid, Typography, Container, Box } from '@mui/material';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import PhoneDisabledIcon from '@mui/icons-material/PhoneDisabled';
+import PhoneIcon from '@mui/icons-material/Phone';
+
 
 
 import { SocketContext } from './../SocketContext';
@@ -26,11 +29,21 @@ const Options = ({ children }) => {
                                     </Button>
                                 </CopyToClipboard>
                             </Grid>
+                            <Grid item xs={12} md={6} sx={{ padding: '20px', bgcolor: "rgba(196, 196, 196, 1)" }}>
+                                <Typography gutterBottom variant='h6'>Make a Call</Typography>
+                                <TextField label='ID to Call' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} fullWidth />
+                                {callAccepted && !callEnded ? (
+                                    <Button variant='contained' sx={{ mt: 2 }} color='secondary' startIcon={<PhoneDisabledIcon fontSize="large" />} fullWidth onClick={leavecall}>Hang Up</Button>
+                                ) : (
+                                    <Button variant='contained' sx={{ mt: 2 }} color='primary' startIcon={<PhoneIcon fontSize="large" />} fullWidth onClick={() => callUser(idToCall)}>Call</Button>
+                                )}
+                            </Grid>
                         </Grid>
                     </form>
+                    {children}
                 </Paper>
             </Box>
-            {children}
+
         </Container >
     )
 }
