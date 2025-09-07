@@ -19,10 +19,11 @@ const Options = ({ children }) => {
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Paper elevation={10} sx={{ padding: "10px 20px", border: "2px solid black", mt: 2 }}>
                     <form sx={{ display: "flex", flexDirection: "column" }} noValidate autoComplete='off'>
-                        <Grid container sx={{ display: "flex", flexDirection: "column", width: "100%", flexDirection: { xs: "column", sm: "row" } }}>
+                        <Grid container sx={{ display: "flex", width: "100%", flexDirection: { xs: "column", sm: "row" } }}>
                             <Grid item xs={12} md={6} sx={{ padding: '20px', bgcolor: "rgba(196, 196, 196, 1)" }}>
                                 <Typography gutterBottom variant='h6'>Account Info</Typography>
                                 <TextField label='Name' value={name} onChange={(e) => setName(e.target.value)} fullWidth />
+                                {console.log(me)}
                                 <CopyToClipboard text={me} sx={{ mt: 2 }}>
                                     <Button variant='contained' color='primary' fullWidth startIcon={<AssignmentIcon fontSize="large" />}>
                                         Copy Your ID

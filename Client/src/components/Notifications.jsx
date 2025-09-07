@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { Button } from '@mui/material';
+
+import { SocketContext } from '../SocketContext';
 
 const Notifications = () => {
+
+    const { answerCall, call, callAccepted } = useContext(SocketContext);
+
     return (
-        <div>
-            Notifications
-        </div>
+        <>
+            {call.isReceivedCall && !callAccepted && (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <h2>{call.name} is Calling: </h2>
+                    <Button variant='contained' color='primary' onClick={answerCall}>
+                        Answer
+                    </Button>
+                </div>
+            )}
+        </>
     )
 }
 
