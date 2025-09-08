@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    gap: 20px;
+    /* space between the boxes */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.box {
+    flex: 1;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 20px;
+    background: #555555;
+}
+
+.box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    background: #555555;
+}
+
+.box input {
+    width: 94.5%;
+    padding: 10px 8px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.box button {
+    width: 97%;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Notification */
+.incoming-call button {
+    padding: 10px 20px;
+    background-color: #555555;
+    /* blue like MUI primary */
+    color: white;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.incoming-call button:hover {
+    background-color: #404040;
+    /* darker blue on hover */
+}
