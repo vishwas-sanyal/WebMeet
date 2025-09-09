@@ -9,15 +9,15 @@
 .box {
     flex: 1;
     border: 2px solid #000;
-    border-radius: 8px;
-    padding: 20px;
-    background: #555555;
+    border-radius: 13px;
+    padding: 15px;
+    background: #454545;
 }
 
 .box h2 {
     text-align: center;
-    margin-bottom: 15px;
-    background: #555555;
+    margin-bottom: 10px;
+    background: #454545;
 }
 
 .box input {
@@ -25,6 +25,9 @@
     padding: 10px 8px;
     margin-bottom: 15px;
     border: none;
+    font-size: large;
+    border-radius: 10px;
+    background-color: #1d1d1d;
 }
 
 .box button {
@@ -32,12 +35,14 @@
     padding: 10px;
     cursor: pointer;
     border: none;
+    font-size: large;
+    border-radius: 10px;
 }
 
 /* Notification */
 .incoming-call button {
     padding: 10px 20px;
-    background-color: #555555;
+    background-color: #3da737;
     /* blue like MUI primary */
     color: white;
     border: 2px solid rgb(189, 189, 189);
@@ -45,6 +50,19 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.2s ease;
+}
+
+.incoming-call h2 {
+    background-color: #454545;
+}
+
+.incoming-call {
+    background-color: #454545;
+    width: 30%;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .incoming-call button:hover {

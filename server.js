@@ -55,13 +55,13 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-    console.log("✅ New socket connection:", socket.id);
+    // console.log("✅ New socket connection:", socket.id);
 
     // Emit the id to client
     socket.emit("me", socket.id);
     // Also log any custom events for debugging:
     socket.on("calluser", (payload) => {
-        console.log("calluser received", payload);
+        // console.log("calluser received", payload);
         io.to(payload.userToCall).emit("calluser", {
             signal: payload.signalData,
             from: payload.from,
@@ -69,12 +69,12 @@ io.on("connection", (socket) => {
         });
     });
     socket.on("answercall", (data) => {
-        console.log("answercall", data);
+        // console.log("answercall", data);
         io.to(data.to).emit("callaccepted", data.signal);
     });
 
     socket.on("disconnect", (reason) => {
-        console.log("⚠️ socket disconnected:", socket.id, "reason:", reason);
+        // console.log("⚠️ socket disconnected:", socket.id, "reason:", reason);
         socket.broadcast.emit("callended");
     });
 });

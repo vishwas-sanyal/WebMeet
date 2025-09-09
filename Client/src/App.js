@@ -1,21 +1,21 @@
 import React from 'react';
-import { Typography, AppBar, Toolbar } from '@mui/material';
+// import { Typography, AppBar, Toolbar } from '@mui/material';
 
 import VideoPlayer from './components/VideoPlayer';
 import Options from './components/Options';
 import Notifications from './components/Notifications';
+import './styles.css';
 
 
 const App = () => {
     return (
         <div id='root'>
-            <AppBar position='static' color='inherit' sx={{ backgroundColor: "#353535", borderRadius: "15px", boxShadow: "0px 15px 15px 3px rgba(196, 196, 196, 1)" }}>
-                <Toolbar sx={{ justifyContent: "center" }}>
-                    <Typography variant="h3" align="center" sx={{ fontFamily: "'Aclonica', sans-serif" }}>
-                        WebMeet
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <header className="appbar">
+                <div className="toolbar">
+                    <h1 className="logo">WebMeet</h1>
+                </div>
+            </header>
+
             <div className='main'>
                 <VideoPlayer />
                 <Options>
