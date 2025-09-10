@@ -40,3 +40,35 @@
     margin: 0;
     background-color: #454545;
 }
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+    .appbar {
+        height: 60px;
+        border-radius: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .main {
+        margin-top: 15px;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appbar {
+        height: 50px;
+        border-radius: 8px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .main {
+        margin-top: 10px;
+    }
+}
