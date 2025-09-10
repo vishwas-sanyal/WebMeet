@@ -51,7 +51,17 @@ app.use(cors());
 const PORT = process.env.PORT || 3500;
 
 app.get("/", (req, res) => {
-    res.send("Server is running");
+    res.send(`
+    <html>
+      <head><title>WebMeet Server</title></head>
+      <body>
+      <h1>Server is Running</h1>
+        <div style="width:80%;">
+          <div class="tenor-gif-embed" data-postid="5552832" data-share-method="host" data-aspect-ratio="2.11864" data-width="100%"><a href="https://tenor.com/view/gtg-omw-gotta-blast-naruto-run-gif-5552832">Gtg Omw GIF</a>from <a href="https://tenor.com/search/gtg-gifs">Gtg GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+      </body>
+    </html>
+  `);
 });
 
 io.on("connection", (socket) => {
