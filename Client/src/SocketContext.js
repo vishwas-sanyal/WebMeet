@@ -130,7 +130,7 @@ import Peer from "simple-peer/simplepeer.min.js";
 const SocketContext = createContext();
 
 // Create socket (point to backend)
-const socket = io("http://localhost:3500", {
+const socket = io("https://webmeet-server.onrender.com/", {
     autoConnect: true,
     // force new connection each time (useful for dev)
     transports: ["websocket", "polling"],
